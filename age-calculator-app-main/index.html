@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,800;1,800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link href="/age-calculator-app-main/assets/CSS/styles.css" rel="stylesheet">
+  <title>Frontend Mentor | Age calculator app</title>
+
+  
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+   <div id="main-container">
+  <div class="container">
+  <!-- Inputs -->
+    <div class="input-container"> 
+      <label for="input-day" class="label-input">
+        DAY
+      </label>
+      <input type="text" id="input-day" class="date-input" placeholder="DD">
+
+      <label for="input-month" class="label-input">
+        MONTH
+      </label>
+      <input type="text" id="input-month" class="date-input" placeholder="MM">
+
+      <label for="input-year" class="label-input">
+        YEAR
+      </label>
+      <input type="text" id="input-year" class="date-input" placeholder="YYYY">
+     
+      </div>
+
+    <!--Arrow and line -->
+  
+    
+    <hr><button id="arrow-btn"><img id="arrow" src="assets/images/icon-arrow.svg"></button>
+     
+     
+
+    <!-- Age Display-->
+<div id="result-container">
+    <span  class="age-output"  id="output-years"  readonly>--</span>
+    <label class="label-output">years</label>
+
+    <span  class="age-output"  id="output-months"  readonly>--</span>
+    <label class="label-output">months</label>
+
+    <span  class="age-output"  id="output-days" readonly>--</span>
+    <label class="label-output">days</label>
+
+
+</div>
+</div>
+  </div>
+
+  
+
+  
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Maan</a>.
+  </div>
+
+
+  <script src="assets/JS/age-calculator.js"></script>
+</body>
+</html>
