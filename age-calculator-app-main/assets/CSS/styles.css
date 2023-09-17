@@ -50,8 +50,9 @@ body {
     display: grid;
     grid-auto-flow: column;
     padding: 20px;
-    grid-template-columns: 150px 150px;
+    grid-template-columns:170px 170px;
      margin-left: 50px;
+     
 }
 
 .label-input {
@@ -60,8 +61,7 @@ body {
     font-weight: 700;
     grid-row-start: 1;
     grid-row-end: 1;
-
-
+    
 }
 
 .date-input {
@@ -79,6 +79,17 @@ body {
 .date-input:focus {
     outline-color: var(--Purple);
 }
+
+.error{
+    grid-row-start: 3;
+    grid-row-end:3 ;
+    font-weight: 400;
+    color: red;
+    font-size:0.75rem ;
+    
+}
+
+
 
 hr {
     width: 81%;

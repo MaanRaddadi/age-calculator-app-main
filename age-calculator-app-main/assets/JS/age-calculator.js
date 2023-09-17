@@ -15,7 +15,7 @@ const yearOut = document.getElementById('output-years');
 const monthOut = document.getElementById('output-months');
 const daysOut = document.getElementById('output-days');
 const arrowBtn = document.getElementById('arrow-btn')
-
+const errorStyle = '0.5px solid var(--Light-red)';
  
 
 arrowBtn.addEventListener('click', () => {
@@ -29,6 +29,7 @@ arrowBtn.addEventListener('click', () => {
   if(validateDay(day , month , year) && validateMonth(month) &&  validateYear(year , month , day)){
     console.log('Date is valid');
     console.log(birthDate)
+
     const currentDate = new Date();
 
     let years = currentDate.getFullYear() - birthDate.getFullYear()
@@ -47,15 +48,10 @@ arrowBtn.addEventListener('click', () => {
        yearOut.innerText = years
        monthOut.innerText = months
        daysOut.innerText = days
-   
 
+       
+  
   }
-
-  
-  
-  
-
-
 });
 
 
@@ -66,17 +62,28 @@ function daysInMonth(year, month) {
 
 //check if day input is valid
 
+
+dayIn.addEventListener('blur', () => {
+  const d = dayIn.value;
+  const m = monthIn.value;
+  const y = yearIn.value;
+validateDay(d,m,y);
+})
+
+
+
 const validateDay = (day, month, year) => {
     if(day === ''){
-      alert("Please fill out all the fields")
+      errorMsg(dayIn , "Please fillout all the fields", errorStyle)
       return false
     } else if (day > 31 || day < 1){
-      alert("The day value is invalid")
+      errorMsg(dayIn , "day value can only be between 1 and 31")
       return false
     } else if (day > daysInMonth(year , month)){
-      alert("The date value is invalid")
+      errorMsg(dayIn , "day value is invalid" , errorStyle)
       return false
     } else {
+      errorMsg(dayIn , '', '')
       return true
     }
     
@@ -84,11 +91,18 @@ const validateDay = (day, month, year) => {
 
 //check if month input is valid
 
+monthIn.addEventListener('blur', () => {
+const m = monthIn.value
+validateMonth(m);
+})
+
+
 const validateMonth = (month) =>{
   if(month > 12 || month < 1 || month ===''){
-      alert("the month value is invalid")
+      errorMsg(monthIn , "Month is invalid" , errorStyle)
       return false
   } else {
+    errorMsg(monthIn , '', '')
     return true;
   }
 
@@ -96,16 +110,29 @@ const validateMonth = (month) =>{
 
 //check if year input is valid
 
+yearIn.addEventListener('blur', () => {
+  const d = dayIn.value;
+  const m = monthIn.value;
+  const y = yearIn.value;
+validateYear(y,m,d);
+})
+
 const validateYear = (year , month , day) =>{
   const currentDate = new Date()
    const giveDate = new Date(year , month , day)
   
   if(giveDate.getFullYear() > currentDate.getFullYear()){
-    alert("the year input is in the future")
+    errorMsg(yearIn , "Can't be born in the future", errorStyle)
     return false
   } else {
+    errorMsg(yearIn , '' , '')
     return true;
   }
+}
+
+function errorMsg(elem, msg, border) {
+  elem.style.border = border;
+  elem.nextElementSibling.innerText = msg;
 }
 
 
