@@ -5,18 +5,15 @@ Frontend Mentor challenges help you improve your coding skills by building reali
 
 ## Table of contents
 
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
+  - [Overview](#overview)
   - [Screenshot](#screenshot)
   - [Links](#links)
-- [My process](#my-process)
   - [Built with](#built-with)
  
 
 ## Overview
   
-### The challenge
-
+The challenge:
 Users should be able to:
 
 - View an age in years, months, and days after submitting a valid date through the form
@@ -36,5 +33,10 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Age Calculator Code]
-- Live Site URL: [Age Calculator]
+- Solution URL: [Age Calculator Code](https://github.com/MaanRaddadi/age-calculator-app-main.git)
+- Live Site URL: [Age Calculator](https://maanraddadi.github.io/age-calculator-app-main/)
+
+### Built with
+- JS
+- HTML
+- CSS
